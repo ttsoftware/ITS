@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{greatfire}
+GreatFire.org.
+\newblock Using baidu to steer millions of computers to launch denial of
+  service attacks.
+\newblock
+  \url{https://drive.google.com/file/d/0ByrxblDXR_yqeUNZYU5WcjFCbXM/view?pli=1},
+  2015.
+
+\bibitem{erik-hjelmvik}
+Erik Hjelmvik.
+\newblock China's man-on-the-side attack on github.
+\newblock
+  \url{http://www.netresec.com/?page=Blog&month=2015-03&post=China%27s-Man-on-the-Side-Attack-on-GitHub},
+  2015.
+
+\bibitem{great-cannon}
+Bill Marczak, Nicholas Weaver, Jakub Dalek, Roya Ensafi, David Fifield, Sarah
+  McKune, Arn Rey, John Scott-Railton, Ronald Deibert, and Vern Paxson.
+\newblock China’s great cannon.
+\newblock \url{https://citizenlab.org/2015/04/chinas-great-cannon/}, 2015.
+
+\bibitem{hackere-3f}
+DR~Nyheder.
+\newblock Hackere skal betale 1,4 millioner kroner i erstatning til 3f.
+\newblock \url{http://www.dr.dk/Nyheder/Indland/2015/04/30/152616.htm}, 2015.
+
+\end{thebibliography}

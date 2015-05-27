@@ -1,0 +1,225 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, hmargin={2.5cm, 2.5cm}, vmargin={2.5cm, 2.5cm}]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+%\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes, shadows, arrows, automata}
+%\usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage{eso-pic} % \AddToShipoutPicture
+
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+\usepackage[danish]{varioref}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{inconsolata}
+\usepackage{etoolbox}
+
+\usepackage{fancyhdr}
+\usepackage{listings}
+
+\definecolor{dark-blue}{HTML}{000080}
+\definecolor{dark-green}{HTML}{008000}
+\definecolor{pale-purple}{HTML}{94558D}
+\definecolor{dark-purple}{HTML}{0000AA}
+\definecolor{regular-purple}{HTML}{660099}
+\definecolor{magenta}{HTML}{B200B2}
+\definecolor{light-gray}{HTML}{FAFAFA}
+\definecolor{theorem-gray}{HTML}{F0F0F0}
+\definecolor{dark-gray}{HTML}{2D2D2D}
+\definecolor{comment}{HTML}{808080}
+\definecolor{digit}{HTML}{0000FF}
+
+\tikzset{
+  treenode/.style = {align=center, inner sep=0pt, text centered,
+    font=\sffamily},
+  arn_n/.style = {treenode, circle, black, font=\sffamily\bfseries, draw=white, fill=white, text width=1.5em}
+}
+
+\setlength\parindent{0pt}
+\usepackage[parfill]{parskip}
+
+\newcommand*{\FormatDigit}[1]{\textcolor{digit}{#1}}
+
+
+\lstset{
+	language=Ruby,
+	prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\space\hookleftarrow}},
+	basicstyle=\footnotesize\ttfamily,
+	%
+	literate=%
+    	{0}{{\FormatDigit{0}}}{1}%
+        {1}{{\FormatDigit{1}}}{1}%
+        {2}{{\FormatDigit{2}}}{1}%
+        {3}{{\FormatDigit{3}}}{1}%
+        {4}{{\FormatDigit{4}}}{1}%
+        {5}{{\FormatDigit{5}}}{1}%
+        {6}{{\FormatDigit{6}}}{1}%
+        {7}{{\FormatDigit{7}}}{1}%
+        {8}{{\FormatDigit{8}}}{1}%
+        {9}{{\FormatDigit{9}}}{1}%
+        {.0}{{\FormatDigit{.0}}}{2}% Following is to ensure that only periods
+        {.1}{{\FormatDigit{.1}}}{2}% followed by a digit are changed.
+        {.2}{{\FormatDigit{.2}}}{2}%
+        {.3}{{\FormatDigit{.3}}}{2}%
+        {.4}{{\FormatDigit{.4}}}{2}%
+        {.5}{{\FormatDigit{.5}}}{2}%
+        {.6}{{\FormatDigit{.6}}}{2}%
+        {.7}{{\FormatDigit{.7}}}{2}%
+        {.8}{{\FormatDigit{.8}}}{2}%
+        {.9}{{\FormatDigit{.9}}}{2}%
+        %{,}{{\FormatDigit{,}}{1}% depends if you want the "," in color
+        {\ }{{ }}{1}% handle the space
+		{æ}{{\ae}}1
+        {ø}{{\o}}1
+        {å}{{\aa}}1
+        {Æ}{{\AE}}1	
+        {Ø}{{\O}}1
+        {Å}{{\AA}}1
+        {~}{{$\scriptstyle{\sim}$}}1, % handle tilde ~
+	%
+	%emph={@param,@return},
+	otherkeywords={},
+	keywords=[2]{self},
+	keywords=[3]{__init__},
+	keywords=[4]{object},
+	keywords=[5]{encoding, flags},
+	keywords=[6]{map},
+	%
+	keywordstyle=\bfseries\color{dark-blue},
+	keywordstyle={[2]\color{pale-purple}},
+	keywordstyle={[3]\color{magenta}},
+	keywordstyle={[4]\color{dark-blue}},
+	keywordstyle={[5]\color{regular-purple}},
+	keywordstyle={[6]\color{dark-purple}},
+	keywordstyle={[7]\bfseries\color{black}},
+    commentstyle=\itshape\color{comment},
+    identifierstyle=\color{black},
+	stringstyle=\bfseries\color{dark-green},
+	%emphstyle=\bfseries,
+	%
+	numbers=left, % where to put the line-numbers
+	numberstyle=\ttfamily\color{dark-gray},
+	numbersep=5pt, % how far the line-numbers are from the code
+	stepnumber=1,
+	showstringspaces=false,
+	backgroundcolor=\color{light-gray},
+	tabsize=4,
+	captionpos=b, % sets the caption-position to bottom
+	breaklines=true % sets automatic line breaking
+}
+
+\linespread{1.3}
+
+%% Change `ku-farve` to `nat-farve` to use SCIENCE's old colors or
+%% `natbio-farve` to use SCIENCE's new colors and logo.
+\def \ColourPDF {include/ku-farve}
+
+%% Change `ku-en` to `nat-en` to use the `Faculty of Science` header
+\def \TitlePDF {include/nat-en}  % University of Copenhagen
+
+\title{
+  \vspace{4cm}
+  \begin{flushleft}
+  \Large{\textbf{Assignment 1}} \\
+  \large{IT-security}
+  \end{flushleft}
+  \vspace{0cm}
+  \begin{flushleft}
+  \small
+  \textit{\today}
+  \end{flushleft}
+  \vspace{12cm}
+  \begin{flushleft}
+  \small
+  Troels Thomsen \texttt{qvw203} \\
+  Department of Computer Science
+  \end{flushleft}
+}
+
+\date{
+	%
+}
+
+\begin{document}
+
+\AddToShipoutPicture*{\put(0,0){\includegraphics*[viewport=0 0 700 600]{\ColourPDF}}}
+\AddToShipoutPicture*{\put(0,602){\includegraphics*[viewport=0 600 700 1600]{\ColourPDF}}}
+\AddToShipoutPicture*{\put(0,0){\includegraphics*{\TitlePDF}}}
+
+\clearpage
+\pagenumbering{gobble}
+\thispagestyle{empty}
+\maketitle
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Recent cases of attacks}
+
+\subsubsection{Greatfire.org}
+On March 26th through March 27th 2015 an online repository for open-source software called GitHub, along with Greatfire.org mirror sites underwent a large-scale distributed denial of service (DDoS) attack. This attack was carried out presumably by the Chinese government through the state-owned companies China Telecom and China Unicom~\cite{erik-hjelmvik}.
+
+The attack did not target GitHub singularly, but its goal was to take down the code repositories \url{https://github.com/cn-nytimes} and \url{https://github.com/greatfire}. These repositories contains code for hosting mirror sites enabling internet users to circumvent the Great Firewall of China (GFW). The attack on the GitHub repositories was part of a larger attack on Greatfire.org and their mirrors hosted on Amazon Cloudfront~\cite{greatfire}.
+
+The DDoS attack was conducted out as a so-called man-on-the-side attack~\cite{great-cannon}. Un-suspecting internet users from outside China accessing Chinese websites or websites containing content hosted in China, was used to perform GET requests to the GitHub repositories and the Amazon Cloudfront mirrors. This was done by injecting a piece of javascript code into an otherwise innocent file sent from the Chinese search engine Baidu. Users visiting sites with Chinese content would unknowingly request the very common Baidu's analytics software hosted inside China. Some of these requests (roughly 1\%) were then intercepted as they went through the GFW, and extra packets containing the malicious javascript were added to the response.
+
+The ultimate goal of these attacks was to prevent Greafire.org from helping Chinese internet users access material which has been banned by the Chinese government.
+
+\subsubsection{3F}
+
+On April 30th 2015 several people were convicted of having conducted a denial of service attack against the organisations 3F, HK and LO during June 2012~\cite{hackere-3f}.
+The attack was carried out by individuals claiming to be affiliated with the hacker group Anonymous, which later denied all such affiliations. The attack was primarily motivated by the fact that 3F and its associated unions was carrying out a blockade against a restaurant in Vejle, due to the restaurant having what 3F considered to be unacceptable working terms for its employees. The hackers considered this unjust and tried to retaliate on behalf of the restaurant by attacking 3F's website.
+
+In both the case of the Chinese attacks and the attack on 3F, the motivation behind the attacks could be said to be political, as both of the attacking parties tried to threaten their adversaries into submission by attacking their online resources.
+The main difference between the two attacks however, is the fact that the attack on Greatfire.org and its services was carried out by the Chinese government, using their vast IT-infrastructure to enable a very sophisticated type of DDoS attack. The attack on 3F on the other hand was carried out by a small group of individuals acting on their own as the old-school rogue type of hackers often depicted in popular culture. The Chinese governments activities can be seen in a large context as part of a global shift towards more government-supported hacking, where the most notable proponent of this strategy is the United States National Security Agency.
+
+\subsubsection{SYN Flood attacks}
+
+SYN Flood attacks exploits the TCP three-way handshake to occupy resources on the targeted server and render it unresponsive to other clients. The attacker will send a large amount of SYN packets to all open ports, but not respond to SYN-ACK thus leaving the connection half-open. The connection will stay half-open for some duration on the server, and if enough SYN packets are received before the server reallocates the connection resource, the attacker can successfully make all available resources half-open thus preventing legitimate users from establishing a connection.
+
+While the attack on GitHub was not strictly speaking a SYN flood attack, it shared some of the same characteristics. Like the changing ports in a SYN Flood, the payload of the GitHub DDoS attack carried a timestamp in order to generate random unique requests~\cite{greatfire}. The main difference between the GitHub attacks and a SYN Flood is the fact that the Chinese attacks actually completed the requests waiting for the server to reply before continuing. When the server was "slow enough" with its response, the script would switch to a different server~\cite{greatfire}.
+ 
+\newpage
+
+\section{Hands-on with SYN Floods}
+
+\subsubsection{Capture file}
+
+We recognize the given packet capture as a recording of a SYN Flood attack by the fact that it contains $629000$ SYN packets send within 4 seconds, and only a few SYN-ACK packets send from the server indicating that it is not used to that amount of traffic. Additionally we see no corresponding ACK from the clients. 
+
+\subsection{Simulated SYN Flood}
+
+My working machine has a SYN backlog size of 256.
+
+During the simulated attack i carried out on my own machine, netstat showed 256 connections with status SYNC-RECV. 
+I recorded approximately 175000 SYN packets during the 1 second capture i did while the attack was ongoing. 
+
+I would regard the attack as successful since i managed to fill up the queue while at the same time slowing down the machine significantly taking up 40-60\% of the processing power.
+I tried the attack with the SYN cookie both on and off, but did not notice any significant difference. It took slightly longer to fill up the que with SYNC-RECV while SYN cookie was on. With SYN cookie on the server is supposed to drop the connection until it receives ACK, and reconstruct the queue entry from the sequence number. It is difficult to assess based on the netstat dump, whether or not this was actually the case for my test attack.
+
+While the SYN cookie mechanism can prevent the server from dropping some legitimate requests if the queue fills up, the server might still slow down significantly due to the excess traffic. Additionally, the server can not accept any other TCP options while SYN cookies is on, since it drops the queue entry while waiting for ACK.
+
+\newpage
+
+\pagenumbering{gobble}
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{litterature}
+
+\end{document}
